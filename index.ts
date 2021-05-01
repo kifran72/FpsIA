@@ -35,29 +35,30 @@ ssh.connect({
     password
 }).then((resp: any) => {
     if (resp) {
-        let videoName = 'video.mp4';
-        ssh.putFiles([{ local: './' + videoName, remote: '/ia' }]).then(function() {
-            console.log("The File thing is done")
-        }, function(error: any) {
-            console.log("Something's wrong")
-            console.log(error)
-        });
-        ssh.exec('python3 inference_video.py', ['--exp=1', '--video=' + videoName], {
-            cwd: '/ia',
-            onStdout(chunk: any) {
-                console.log('stdoutChunk', chunk.toString('utf8'))
-            },
-            onStderr(chunk: any) {
-                console.log('stderrChunk', chunk.toString('utf8'))
-            },
-        });
+        // let videoName = 'video.mp4';
+        // ssh.putFiles([{ local: './' + videoName, remote: '/ia' }]).then(function() {
+        //     console.log("The File thing is done")
+        // }, function(error: any) {
+        //     console.log("Something's wrong")
+        //     console.log(error)
+        // });
+        // ssh.exec('python3 inference_video.py', ['--exp=1', '--video=' + videoName], {
+        //     cwd: '/ia',
+        //     onStdout(chunk: any) {
+        //         console.log('stdoutChunk', chunk.toString('utf8'))
+        //     },
+        //     onStderr(chunk: any) {
+        //         console.log('stderrChunk', chunk.toString('utf8'))
+        //     },
+        // });
 
-        ssh.getFile('./' + videoName, '/ia').then(function(Contents: any) {
-            console.log("The File's contents were successfully downloaded")
-        }, function(error: any) {
-            console.log("Something's wrong")
-            console.log(error)
-        });
+        // ssh.getFile('./' + videoName, '/ia').then(function(Contents: any) {
+        //     console.log("The File's contents were successfully downloaded")
+        // }, function(error: any) {
+        //     console.log("Something's wrong")
+        //     console.log(error)
+        // });
+        console.log('ça marche');
     }
 })
 
