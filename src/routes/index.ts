@@ -1,6 +1,6 @@
 import { UserRoute } from './user';
 
-export const routes = (app: any, twing: any, services: any) => {
+export const routes = (app: any, twing: any) => {
     app.get('/', function(req: any, res: any) {
         if (!req.session.isConnected) {
             res.redirect('/login');
@@ -11,7 +11,7 @@ export const routes = (app: any, twing: any, services: any) => {
         }
     });
 
-    UserRoute(app, twing, services);
+    UserRoute(app, twing);
 
     // ALL OTHER ROUTES REDIRECT TO '/'
     app.get('*', function(req: any, res: any) {

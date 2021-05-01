@@ -9,7 +9,7 @@ import session from 'express-session';
 const { NodeSSH } = require('node-ssh')
 const app = express();
 const PORT = 3000;
-const services = new Services();
+// const services = new Services();
 const loader = new TwingLoaderFilesystem("./src/templates");
 const twing = new TwingEnvironment(loader);
 const ssh = new NodeSSH();
@@ -66,8 +66,8 @@ const password = process.env.PASSWORD;
 
 
 // Applications
-index.init(services);
-index.routes(app, twing, services);
+// index.init(services);
+index.routes(app, twing);
 
 //Start server 
 app.listen(PORT, () => { console.log(chalk.blue('Client web: http://localhost:' + PORT)); });
