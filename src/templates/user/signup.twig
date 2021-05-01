@@ -1,0 +1,28 @@
+{% include 'structure/header.twig' %}
+
+<section class="container">
+    <h1>Inscrivez-vous</h1>
+    <form class="formsignup">
+        <input type="text"
+               name=""
+               id="username"
+               autocomplete="username"
+               placeholder="Saisissez votre identifiant">
+        <input type="password"
+               name=""
+               id="password"
+               placeholder="Mot de passe"
+               autocomplete="current-password">
+        <input type="button"
+               name="Connexion"
+               value="Connexion"
+               onclick="signup()">
+    </form>
+    <a href="/login">Déja inscrit ?</a>
+</section>
+
+</body>
+
+<script src="/js/user/signup.js"></script>
+
+</html>
